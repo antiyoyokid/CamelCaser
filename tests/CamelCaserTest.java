@@ -22,15 +22,57 @@ The lower camel case version of the string is defined as follows.
      */
     @Test
     public void handoutTestCamelCase() {
+
+        // Space test
+        // CapsLock test
+        //numbers test
+        //Digits
         assertEquals("thisIsMyString", CamelCaser.camelCase("this is my string"));
         assertEquals("iAmTheBest", CamelCaser.camelCase(" I am the best"));
         assertEquals("hahaha", CamelCaser.camelCase("HAHAHA"));
         assertEquals("", CamelCaser.camelCase(""));
-        
+        assertEquals("lol", CamelCaser.camelCase("lol"));
+        assertEquals("iHi8", CamelCaser.camelCase("I hi8"));
+        assertEquals("iHii8", CamelCaser.camelCase("I         HIi8"));
+    }
 
+    @Test
+    public void WrongCharacter() {
+        try {
+            CamelCaser.camelCase("*dfsdfsdf");
 
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
 
+    @Test
+    public void nullInput() {
+        try {
+            CamelCaser.camelCase(null);
 
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
 
+    @Test
+    public void wrongDigits() {
+        try {
+            CamelCaser.camelCase("haha 8op");
+
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
