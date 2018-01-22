@@ -26,7 +26,14 @@ The lower camel case version of the string is defined as follows.
         assertEquals("iAmTheBest", CamelCaser.camelCase(" I am the best"));
         assertEquals("hahaha", CamelCaser.camelCase("HAHAHA"));
         assertEquals("", CamelCaser.camelCase(""));
-        
+        assertEquals("lol", CamelCaser.camelCase("lol"));
+        assertEquals("iHi8", CamelCaser.camelCase("I hi8"));
+
+
+
+
+
+
 
 
 
