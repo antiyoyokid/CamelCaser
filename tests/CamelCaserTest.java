@@ -28,7 +28,7 @@ The lower camel case version of the string is defined as follows.
         //numbers test
         //Digits
         assertEquals("thisIsMyString", CamelCaser.camelCase("this is my string"));
-        assertEquals("iAmTheBest", CamelCaser.camelCase(" I am the best"));
+        assertEquals("iAmTheBest", CamelCaser.camelCase("   I am the best"));
         assertEquals("hahaha", CamelCaser.camelCase("HAHAHA"));
         assertEquals("", CamelCaser.camelCase(""));
         assertEquals("lol", CamelCaser.camelCase("lol"));
@@ -40,6 +40,14 @@ The lower camel case version of the string is defined as follows.
     public void WrongCharacter() {
         try {
             CamelCaser.camelCase("*dfsdfsdf");
+
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+
+
+        try {
+            CamelCaser.camelCase("haha1+6");
 
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
