@@ -76,6 +76,7 @@ The lower camel case version of the string is defined as follows.
     public void IrdinaTest() { // A friend challenged my code and wrote this test case and ofc it passed :)
         assertEquals("lolhi", CamelCaser.camelCase("lolhi"));
         assertEquals("whatSp8cesAreExisting", CamelCaser.camelCase("   What     sp8Ces  aRE            existing"));
+        assertEquals("whatSp8cesAre", CamelCaser.camelCase("   What     sp8Ces  aRE            ")); //space after
     }
 
     @Test
