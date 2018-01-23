@@ -23,18 +23,35 @@ The lower camel case version of the string is defined as follows.
     @Test
     public void handoutTestCamelCase() {
 
-        // Space test
-        // CapsLock test
-        //numbers test
-        //Digits
+
         assertEquals("thisIsMyString", CamelCaser.camelCase("this is my string"));
-        assertEquals("iAmTheBest", CamelCaser.camelCase("   I am the best"));
-        assertEquals("hahaha", CamelCaser.camelCase("HAHAHA"));
-        assertEquals("", CamelCaser.camelCase(""));
-        assertEquals("lol", CamelCaser.camelCase("lol"));
-        assertEquals("iHi8", CamelCaser.camelCase("I hi8"));
-        assertEquals("iHii8", CamelCaser.camelCase("I         HIi8"));
+
     }
+
+        @Test
+                public void space() {
+            assertEquals("iAmTheBest", CamelCaser.camelCase("      I    am the best")); //Tests spaces at the start and in between words
+            assertEquals("iHii8", CamelCaser.camelCase("I         HIi8")); // similar case with numbers and different Captials
+        }
+
+        @Test
+                public void Numbers(){
+            assertEquals("iHi8", CamelCaser.camelCase("I hi8")); //if there's numbers in the between the words
+        }
+
+        @Test
+                public void Letters(){
+            assertEquals("hahaha", CamelCaser.camelCase("HAHAHA")); //caps lock
+            assertEquals("", CamelCaser.camelCase("")); //empty string
+            assertEquals("hiIAmAishik", CamelCaser.camelCase("HI I aM AiSHik")); //random captials
+            assertEquals("lolhi", CamelCaser.camelCase("lolHi")); //if its already good to go
+            assertEquals("lolhi", CamelCaser.camelCase("lolhi")); //if there's no change required
+
+        }
+
+
+
+
 
     @Test
     public void WrongCharacter() {
