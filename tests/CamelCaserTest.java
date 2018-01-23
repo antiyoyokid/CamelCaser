@@ -63,7 +63,7 @@ The lower camel case version of the string is defined as follows.
 
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
-        }
+        } // ok
     }
 }
 
